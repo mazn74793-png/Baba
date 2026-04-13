@@ -1,0 +1,6 @@
+{
+  "name": "محفظة العمل - Work Wallet",
+  "description": "تطبيق بسيط لمساعدة الوالد في إدارة أموال العمل، تتبع المصاريف، وإصدار الفواتير.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

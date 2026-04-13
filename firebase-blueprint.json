@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "Transaction": {
+      "title": "Transaction",
+      "description": "A financial transaction",
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "amount": { "type": "number" },
+        "type": { "type": "string", "enum": ["income", "expense"] },
+        "date": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" },
+        "sessionId": { "type": "string" }
+      },
+      "required": ["description", "amount", "type", "date", "userId", "sessionId"]
+    },
+    "Session": {
+      "title": "Session",
+      "description": "A work session or project",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" }
+      },
+      "required": ["name", "createdAt", "userId"]
+    }
+  },
+  "firestore": {
+    "/sessions/{sessionId}": {
+      "schema": "Session",
+      "description": "Work sessions"
+    },
+    "/transactions/{transactionId}": {
+      "schema": "Transaction",
+      "description": "Transactions within sessions"
+    }
+  }
+}
