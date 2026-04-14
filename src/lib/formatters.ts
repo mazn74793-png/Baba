@@ -1,8 +1,5 @@
 export const formatCurrency = (amount: number) => {
-  return new Intl.NumberFormat('ar-EG', {
-    style: 'currency',
-    currency: 'EGP',
-  }).format(amount);
+  return amount.toLocaleString('ar-EG') + ' ج.م';
 };
 
 export const formatDate = (date: string) => {

@@ -341,45 +341,45 @@ export default function App() {
         )}
 
         {/* Balance Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="bg-emerald-600 text-white rounded-3xl shadow-xl border-none overflow-hidden relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card className="bg-emerald-600 text-white rounded-3xl shadow-xl border-none overflow-hidden relative min-h-[140px]">
             <div className="absolute top-0 right-0 p-4 opacity-20">
-              <ArrowUpCircle className="w-24 h-24" />
+              <ArrowUpCircle className="w-20 h-20" />
             </div>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-xl font-bold opacity-90">إجمالي العهدة (دخل)</CardTitle>
+            <CardHeader className="pb-1">
+              <CardTitle className="text-lg font-bold opacity-90">إجمالي العهدة (دخل)</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-black">{formatCurrency(totalIncome)}</div>
+              <div className="text-3xl font-black break-all">{formatCurrency(totalIncome)}</div>
             </CardContent>
           </Card>
 
-          <Card className="bg-red-600 text-white rounded-3xl shadow-xl border-none overflow-hidden relative">
+          <Card className="bg-red-600 text-white rounded-3xl shadow-xl border-none overflow-hidden relative min-h-[140px]">
             <div className="absolute top-0 right-0 p-4 opacity-20">
-              <ArrowDownCircle className="w-24 h-24" />
+              <ArrowDownCircle className="w-20 h-20" />
             </div>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-xl font-bold opacity-90">إجمالي المصاريف</CardTitle>
+            <CardHeader className="pb-1">
+              <CardTitle className="text-lg font-bold opacity-90">إجمالي المصاريف</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-black">{formatCurrency(totalExpense)}</div>
+              <div className="text-3xl font-black break-all">{formatCurrency(totalExpense)}</div>
             </CardContent>
           </Card>
 
           <Card className={cn(
-            "rounded-3xl shadow-xl border-none overflow-hidden relative",
+            "rounded-3xl shadow-xl border-none overflow-hidden relative min-h-[140px]",
             balance >= 0 ? "bg-slate-900 text-white" : "bg-amber-500 text-white"
           )}>
             <div className="absolute top-0 right-0 p-4 opacity-20">
-              <Wallet className="w-24 h-24" />
+              <Wallet className="w-20 h-20" />
             </div>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-xl font-bold opacity-90">الفلوس اللي معاك دلوقتي</CardTitle>
+            <CardHeader className="pb-1">
+              <CardTitle className="text-lg font-bold opacity-90">الفلوس اللي معاك دلوقتي</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-black">{formatCurrency(balance)}</div>
+              <div className="text-3xl font-black break-all">{formatCurrency(balance)}</div>
               {balance < 0 && (
-                <p className="mt-2 text-lg font-bold bg-white/20 px-3 py-1 rounded-lg inline-block">
+                <p className="mt-1 text-sm font-bold bg-white/20 px-2 py-0.5 rounded-lg inline-block">
                   خلي بالك.. فيه عجز!
                 </p>
               )}
